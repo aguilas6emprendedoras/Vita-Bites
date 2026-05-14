@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VitaBites | Real Food, Real Vibes</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+
+        :root{
+            --verde-oliva:#6A8D3D;
+            --verde-salvia:#DDE8D8;
+            --rosa-berry:#C03A6B;
+            --rosa-pastel:#F4A7C1;
+            --crema:#F8F4EE;
+            --marron-natural:#9B6A3B;
+            --texto-oscuro:#3B352F;
+        }
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:'Poppins',sans-serif;
+            background:var(--crema);
+            color:var(--texto-oscuro);
+            line-height:1.6;
+        }
+
+        h1,h2,h3{
+            font-family:'Playfair Display',serif;
+        }
+
+        /* HEADER */
+
+        header{
+            background:white;
+            padding:1rem 5%;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            position:sticky;
+            top:0;
+            z-index:1000;
+            box-shadow:0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo img{
+            height:75px;
+            width:auto;
+        }
+
+        nav ul{
+            display:flex;
+            list-style:none;
+            gap:20px;
+        }
+
+        nav a{
+            text-decoration:none;
+            color:var(--texto-oscuro);
+            font-weight:600;
+            transition:0.3s;
+        }
+
+        nav a:hover{
+            color:var(--rosa-berry);
+        }
+
+        /* HERO */
+
+        .hero{
+            height:90vh;
+
+            background:
+            linear-gradient(rgba(221,232,216,0.7),rgba(221,232,216,0.7)),
+            url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=1600&auto=format&fit=crop');
+
+            background-size:cover;
+            background-position:center;
+
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+
+            text-align:center;
+            padding:20px;
+        }
+
+        .hero h1{
+            font-size:4rem;
+            color:var(--verde-oliva);
+            margin-bottom:20px;
+        }
+
+        .hero p{
+            font-size:1.2rem;
+            max-width:700px;
+            margin-bottom:30px;
+        }
+
+        .btn{
+            background:var(--rosa-berry);
+            color:white;
+            padding:14px 30px;
+            border-radius:30px;
+            text-decoration:none;
+            font-weight:bold;
+            transition:0.3s;
+        }
+
+        .btn:hover{
+            background:#a02d56;
+            transform:scale(1.05);
+        }
+
+        section{
+            padding:80px 10%;
+        }
+
+        .section-title{
+            text-align:center;
+            font-size:2.5rem;
+            color:var(--verde-oliva);
+            margin-bottom:50px;
+        }
+
+        .section-title::after{
+            content:'';
+            width:70px;
+            height:3px;
+            background:var(--rosa-pastel);
+            display:block;
+            margin:10px auto;
+        }
+
+        /* PROMOCIONES */
+
+        .promociones{
+            background:var(--verde-salvia);
+        }
+
+        .promo-banner{
+            background:white;
+            padding:40px;
+            border-radius:20px;
+            text-align:center;
+            border:2px dashed var(--rosa-berry);
+        }
+
+        /* CATALOGO */
+
+        .catalogo-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+            gap:30px;
+        }
+
+        .product-card{
+            background:white;
+            border-radius:15px;
+            overflow:hidden;
+            text-align:center;
+            box-shadow:0 5px 15px rgba(0,0,0,0.08);
+            transition:0.3s;
+            padding-bottom:20px;
+        }
+
+        .product-card:hover{
+            transform:translateY(-10px);
+        }
+
+        .product-card img{
+            width:100%;
+            height:250px;
+            object-fit:cover;
+        }
+
+        .product-card h3{
+            margin:15px 0 5px;
+            color:var(--verde-oliva);
+        }
+
+        .price{
+            color:var(--marron-natural);
+            font-size:1.2rem;
+            font-weight:bold;
+            margin-bottom:10px;
+            display:block;
+        }
+
+        /* SOBRE NOSOTROS */
+
+        .sobre-nosotros{
+            background:white;
+        }
+
+        .info-content{
+            max-width:850px;
+            margin:auto;
+            text-align:justify;
+        }
+
+        .info-content h3{
+            margin-top:30px;
+            color:var(--marron-natural);
+        }
+
+        .values-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+            gap:20px;
+            margin-top:30px;
+        }
+
+        .value-item{
+            background:var(--crema);
+            padding:20px;
+            border-radius:10px;
+            text-align:center;
+        }
+
+        /* FEEDBACK */
+
+        .feedback{
+            background:var(--verde-salvia);
+            text-align:center;
+        }
+
+        /* FOOTER */
+
+        footer{
+            background:var(--texto-oscuro);
+            color:white;
+            text-align:center;
+            padding:50px 10%;
+        }
+
+        .footer-logo{
+            height:90px;
+            margin-bottom:20px;
+        }
+
+        .social-links a{
+            color:var(--rosa-pastel);
+            text-decoration:none;
+        }
+
+        .copyright{
+            margin-top:20px;
+            opacity:0.7;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:768px){
+
+            header{
+                flex-direction:column;
+                gap:15px;
+            }
+
+            nav ul{
+                flex-wrap:wrap;
+                justify-content:center;
+            }
+
+            .hero h1{
+                font-size:2.5rem;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+
+            <img 
+            src="logo.png"
+            alt="VitaBites Logo">
+
+        </div>
+
+        <nav>
+
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#promociones">Promociones</a></li>
+                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="#empresa">Empresa</a></li>
+                <li><a href="#calificanos">Califícanos</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <!-- HERO -->
+
+    <section id="inicio" class="hero">
+
+        <h1>
+            El combustible perfecto para tu día.
+        </h1>
+
+        <p>
+            Real Food, Real Vibes. Descubre snacks saludables,
+            energía natural y productos deliciosos para tu día.
+        </p>
+
+        <a href="#catalogo" class="btn">
+            Explorar Catálogo
+        </a>
+
+    </section>
+
+    <!-- PROMOCIONES -->
+
+    <section id="promociones" class="promociones">
+
+        <h2 class="section-title">
+            Promociones Especiales
+        </h2>
+
+        <div class="promo-banner">
+
+            <h3>
+                ¡Combo Bienestar!
+            </h3>
+
+            <p>
+                Compra 2 smoothies y recibe un mix de semillas
+                al 50% de descuento.
+            </p>
+
+            <br>
+
+            <a href="#catalogo" class="btn">
+                Ver Productos
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- CATALOGO -->
+
+    <section id="catalogo">
+
+        <h2 class="section-title">
+            Nuestro Catálogo
+        </h2>
+
+        <p style="text-align:center; margin-bottom:40px;">
+            Productos naturales hechos con amor y conciencia ambiental.
+        </p>
+
+        <!-- Imagen principal -->
+
+        <div style="text-align:center; margin-bottom:50px;">
+
+            <img
+            src="masproductos.jpeg"
+            style="width:100%; max-width:1000px; border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,0.1);">
+
+        </div>
+
+        <div class="catalogo-grid">
+
+            <div class="product-card">
+
+                <img
+                src="smothie.jpeg"
+                alt="Smoothie">
+
+                <h3>Smoothies Frutales</h3>
+
+                <span class="price">$60.00</span>
+
+                <p>Frutos rojos, mango o fresa.</p>
+
+            </div>
+
+            <div class="product-card">
+
+                <img
+                src="granola.jpg"
+                alt="Granola">
+
+                <h3>Granola Artesanal</h3>
+
+                <span class="price">$20.00</span>
+
+                <p>Endulzada naturalmente.</p>
+
+            </div>
+
+            <div class="product-card">
+
+                <img
+                src="mix.jpg"
+                alt="Mix">
+
+                <h3>Mix de Frutos y Semillas</h3>
+
+                <span class="price">$20.00</span>
+
+                <p>Energía pura en cada bocado.</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SOBRE NOSOTROS -->
+
+    <section id="empresa" class="sobre-nosotros">
+
+        <h2 class="section-title">
+            Sobre la Empresa
+        </h2>
+
+        <div class="info-content">
+
+            <p>
+                En VitaBites creemos que una buena alimentación puede
+                cambiar la manera en la que las personas viven su día a día.
+            </p>
+
+            <h3>Misión</h3>
+
+            <p>
+                Ofrecer alimentos saludables, naturales y accesibles
+                que ayuden a mejorar la calidad de vida.
+            </p>
+
+            <h3>Visión</h3>
+
+            <p>
+                Convertirnos en una marca reconocida por promover
+                una alimentación saludable e innovadora.
+            </p>
+
+            <h3>Nuestros Valores</h3>
+
+            <div class="values-grid">
+
+                <div class="value-item">
+                    <strong>Bienestar</strong><br>
+                    Salud física y emocional.
+                </div>
+
+                <div class="value-item">
+                    <strong>Sustentabilidad</strong><br>
+                    Cuidado del planeta.
+                </div>
+
+                <div class="value-item">
+                    <strong>Calidad</strong><br>
+                    Ingredientes orgánicos.
+                </div>
+
+                <div class="value-item">
+                    <strong>Innovación</strong><br>
+                    Diseño moderno.
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FEEDBACK -->
+
+    <section id="calificanos" class="feedback">
+
+        <h2 class="section-title">
+            Tu opinión nos importa
+        </h2>
+
+        <p>
+            Ayúdanos a mejorar calificando nuestros productos.
+        </p>
+
+        <br>
+
+        <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSfCzTO0jBkboUr_cZJJjkDB52i5mBhYnETCeTVvd05gyw9i1w/viewform?usp=dialog"
+        target="_blank"
+        class="btn">
+
+        Llenar Formulario
+
+        </a>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <img
+        src="logo.png"
+        alt="VitaBites Logo"
+        class="footer-logo">
+
+        <p>
+            “Real Food, Real Vibes.”
+        </p>
+
+        <br>
+
+        <div class="social-links">
+
+            <p>
+                Instagram:
+                <a href="https://instagram.com/" target="_blank">
+                    @vitabites_snacks
+                </a>
+            </p>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 VitaBites. Todos los derechos reservados.
+        </div>
+
+    </footer>
+
+</body>
+</html>
